@@ -1,5 +1,5 @@
-
 /* mis variables globales para mi paleta de colores y bordes :) */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 :root {
   --cream:        #F7F4EC;
   --cream-light:  #FDFBF6;
@@ -46,13 +46,6 @@ a{ text-decoration:none; color:inherit; }
   padding: 0 24px;
 }
 
-.gif-logo img {
-  width: 350px;
-  height: 350px;
-  float: right;
-  margin-right: 20px; 
-}
-
 /* =========================================================
    BOTONES
    ========================================================= */
@@ -78,8 +71,6 @@ a{ text-decoration:none; color:inherit; }
 .btn--sm{ padding: 10px 20px; font-size: 0.82rem; }
 .btn--lg{ padding: 18px 40px; font-size: 1rem; }
 .btn--icon-only{ padding: 12px; border-radius: 50%; }
-
-.btn-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top: 12px; }
 
 /* =========================================================
    NAVBAR FLOTANTE
@@ -135,7 +126,7 @@ a{ text-decoration:none; color:inherit; }
 .nav-link:hover{ color: var(--accent); }
 .nav-link.active{ color: var(--accent); font-weight:500; }
 
-.nav-actions{ display:flex; align-items:center; gap:10px; }
+.nav-acciones{ display:flex; align-items:center; gap:10px; }
 
 .btn-curriculum{
   display:inline-flex; align-items:center; gap:6px;
@@ -147,7 +138,7 @@ a{ text-decoration:none; color:inherit; }
   font-weight: 500;
   transition: background .2s ease;
 }
-.btn-resume:hover{ background:var(--ink)}
+.btn-curriculum:hover{ background:var(--accent-dark); }
 
 .nav-toggle{
   display:none;
@@ -162,7 +153,7 @@ a{ text-decoration:none; color:inherit; }
   border-radius: 2px;
 }
 
-@media (max-width: 880px){ /*esto lo utilizo para el redimensionamiento de pantallas pequeñas y asi sea responsive en cualquier dispositivo  */
+@media (max-width: 880px){ /*esto lo utilizo para el redimensionamiento de pantallas pequeñas con menu hamburguesa y asi sea responsive en cualquier dispositivo  */
   .nav-links{
     position: absolute;
     top: calc(100% + 10px);
@@ -174,7 +165,7 @@ a{ text-decoration:none; color:inherit; }
     border: 1px solid rgba(168,132,92,0.14);
     border-radius: 24px;
     padding: 14px 22px;
-    box-shadow: var(--shadow-soft);
+    box-shadow: var(--sombra-suave);
     display:none;
   }
   .nav-links.is-open{ display:flex; }
@@ -188,4 +179,212 @@ a{ text-decoration:none; color:inherit; }
     0% { opacity: 1; }
     50% { opacity: 0.4; }
     100% { opacity: 1; }
+}
+
+/* =========================================================
+   PRESENTACIÓN (Inicio)
+   ========================================================= */
+.presentacion {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 120px;
+  overflow: hidden;
+}
+
+/* --- grid principal --- */
+
+.contenedor-seccion.grid-presentacion {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: center;
+  padding-bottom: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  /* --- capa de atras para el fondo --- */
+  background: rgba(253, 251, 246, 0.55);
+  border: 1px solid rgba(168, 132, 92, 0.18);
+  border-radius: var(--borde-grande);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--sombra-suave);
+  padding: 56px 48px;
+}
+
+@media (min-width: 960px) {
+  .contenedor-seccion.grid-presentacion {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+}
+
+/* --- texto de presentación --- */
+.texto-presentacion {
+  max-width: 600px;
+}
+
+.desc {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: block;
+}
+
+.titulo {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3rem, 6vw, 5.2rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    margin-bottom: 20px;
+    color: #403c39;
+}
+
+.titulo span {
+    display: block;
+    color: #a9784e;
+    letter-spacing: -0.045em;
+}
+
+.rol-tag {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6f6a64;
+    display: block;
+    margin-top: 12px;
+}
+
+/* --- habilidades (etiquetas tipo pastilla) --- */
+.fila-etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+    display: block;
+    margin-top: 12px;
+}
+.etiqueta {
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  background: rgba(168,132,92,0.1);
+  border: 1px solid var(--cream);
+  color: var(--accent);
+}
+
+/* --- descripción --- */
+.descripcion-presentacion {
+  font-family: var(--texto-font);
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin-bottom: 30px;
+}
+
+/* --- botones --- */
+.fila-botones {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.btn {
+  padding: 10px 18px;
+  border-radius: var(--borde-medio);
+  font-family: var(--texto-font);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn--proyectos {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: var(--sombra-suave);
+}
+.btn--proyectos:hover {
+  background: var(--accent-dark);
+}
+.btn--cv {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  box-shadow: var(--sombra-suave);
+}
+.btn--ghost:hover {
+  background: var(--accent-soft);
+}
+
+/* --- estadísticas --- */
+.fila-estadisticas {
+  display: flex;
+  gap: 40px;
+  margin-top: 44px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(168,132,92,0.15);
+  align-items: center;  
+  text-align: center;
+}
+.estadistica {
+  display: flex;
+  flex-direction: column;
+}
+.numero-estadistica {
+  font-family: var(--titulo-font);
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+.etiqueta-estadistica {
+  font-family: var(--texto-font);
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+
+/* --- logo / gif --- */
+.logoPrincipal{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gif-logo{
+  width: min(800px, 90vw);
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+/* esto es para el manejo responsive asi mi foto se ve primero al cargarlo en tablet o celular */
+@media (max-width: 959px) {
+  .logoPrincipal {
+    order: -1; /* la foto sube arriba del texto en móvil/tablet */
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .titulo {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+  }
+  .fila-estadisticas {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .fila-botones {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
 }
