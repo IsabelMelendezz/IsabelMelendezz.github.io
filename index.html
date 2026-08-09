@@ -1,101 +1,106 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-    <!---meta tags----->
     <meta charset="UTF-8">
-    <meta name="description" content="Soy Isabel Meléndez, estudiante de Ingeniería en Sistemas de la Universidad Mariano Gálvez (8.° semestre).">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="es_ES || es_GT">
-
-    <title>Bienvenido | Isabel Melendez</title>
-
-    <style>
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 24px;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #4A3F35;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            padding: 16px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido | Isabel Meléndez </title>
+    <link rel="LogoIsa Icon" href="img/LogoIsa.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
 
 </head>
+<body>
+    <header class="navbar" id="navbar">
+  <nav class="barra-nav">
+    <!-- el # lo que hace es declararlos como elementos unicos al momento de buscarlos -->
+    <a href="#inicio" class="nav-logo">
+      <span class="circulo-dec"></span>
+      <span class="texto-complementario">Portafolio de<br>Isabel Meléndez</span>
+    </a>
 
-<body bgcolor="#F8F4EC">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio" class="nav-link active" data-nav>Inicio</a></li>
+      <li><a href="#proyectos" class="nav-link" data-nav>Proyectos</a></li>
+      <li><a href="#tecnologias" class="nav-link" data-nav>Tecnologias</a></li>
+      <li><a href="#certificaciones" class="nav-link" data-nav>Certificaciones</a></li>
+      <li><a href="#contacto" class="nav-link" data-nav>Contacto</a></li>
+      <li><a href="#sobre-mi" class="nav-link" data-nav>Sobre mí</a></li>
+    </ul>
 
-    <header>
-        <table width="100%" bgcolor="#E8DCC8">
-            <tr>
-                <td>
-                    <a href="../">
-                        <img src="./logoIsa.png" alt="Logo de IsaCode" width="150" height="150">
-                    </a>
-                </td>
-
-                <td align="left">
-                    <nav>
-                        <ul>
-                            <li>Proyectos</li>
-                            <li><a href="Formulario.html">Contacto</a></li>
-                        </ul>
-                    </nav>
-                </td>
-            </tr>
-        </table>
-    </header>
+    <div class="nav-acciones">
+      <a href="recursos/CV2026_ISABEL MELENDEZ_OF.pdf" class="btn-curriculum" download>
+        Resume ➔
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
 
     <main>
 
-        <section>
-            <h1 align="center">Hola soy Isa</h1>
+    <!-- ======== HERO O INICIO ================== -->
 
-            <p align="center">
-                <img src="./hola.jpeg" width="300" height="600">
-            </p>
-        </section>
+  <section id="inicio" class="inicio">
+  <div class="inicio-contenido">
+    <p class="saludo">Soy</p>
+    <h1><span>Isabel</span> Meléndez</h1>
+    <span class="tag-role">Estudiante de Ingeniería en Sistemas</span>
 
-        <hr width="70%"> <!-- Aquí agregué el Horizontal Rule dividiendo mis secciones -->
+    <div class="skill-row">
+      <span class="pill">Desarrollo de Software</span>
+      <span class="pill">Infraestructura y Redes</span>
+      <span class="pill">Bases de Datos</span>
+    </div>
 
-        <section>
-            <h2 align="center">Sobre mí</h2>
+    <p class="inicio-text">
+      Me gusta crear soluciones digitales combinando ciberseguridad, software y desarrollo web, con un enfoque en crear tecnología funcional, segura y pensada para resolver problemas reales.
+    </p>
 
-            <p align="center">
-                Soy estudiante de Ingeniería en Sistemas y me apasiona la
-                ciberseguridad, la infraestructura y el desarrollo de software.
-            </p>
-        </section>
+    <div class="gif-logo">
+      <img src="recursos/Logo.gif" alt="gif-logo">
+    </div>
 
-    </main>
+    <div class="btn-row">
+      <a href="#proyectos" class="btn btn--proyecto">Ver proyectos ➔</a>
+      <a href="CV2026_ISABEL MELENDEZ_OF.pdf" class="btn btn--cv" download>Descargar CV ➔</a>
+    </div>
 
-    <footer>
-        <table width="100%" bgcolor="#DCCCB8">
-            <tr>
-                <td align="center">
-                    <p>2026 Isabel Meléndez | Hola esto pertenece a Isa</p>
-                </td>
-            </tr>
-        </table>
-    </footer>
+    <div class="estadisticas">
+      <div class="stadistica"><span class="stat-num">3</span><span class="stat-label">Proyectos destacados</span></div>
+      <div class="stadistica"><span class="stat-num">1</span><span class="stat-label">Certificación activa</span></div>
+      <div class="stadistica"><span class="stat-num">8vo</span><span class="stat-label">Semestre — UMG</span></div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        console.log("Hola mundo");
-    </script>
+  <section id="proyectos" class="proyectos">
+    <h2>Mis proyectos</h2>
+  </section>
+
+  <section id="tecnologias" class="habilidades">
+    <h2>Tecnologías dominadas</h2>
+  </section>
+
+  <section id="certificaciones" class="certificaciones">
+    <h2>Sobre mí</h2>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <h2>Contáctame</h2>
+  </section>
+
+
+  <section id="sobre-mi" class="sobre-mi">
+    <h2>Sobre mí</h2>
+  </section>
+
+
+</main>
+
 
 </body>
-
+   
+    
+</body>
 </html>

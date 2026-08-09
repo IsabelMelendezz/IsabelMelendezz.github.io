@@ -1,0 +1,191 @@
+
+/* mis variables globales para mi paleta de colores y bordes :) */
+:root {
+  --cream:        #F7F4EC;
+  --cream-light:  #FDFBF6;
+  --cream-deep:   #EDE8DC;
+  --ink:          #4A4542;
+  --ink-soft:     #7B746D;
+  --accent:       #A8845C;
+  --accent-dark:  #8E6E4B;
+  --accent-soft:  #D8C6A5;
+  --accent-soft-2:#C8B28C; 
+  --titulo-font: 'Playfair Display', serif;   
+  --texto-font:  'Inter', sans-serif;        
+  --codigo-font: 'DM Mono', monospace; 
+  --borde-grande: 32px;   
+  --borde-medio:  20px;  
+  --borde-peque:  12px;   
+  --sombra-suave: 0 8px 32px rgba(168,132,92,0.14);  
+  --sombra-fuerte: 0 24px 64px rgba(168,132,92,0.20); 
+
+}
+*{ /*siguiendo el modelo de cajas*/
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+html{ scroll-behavior: smooth; }
+
+body{
+  font-family: var(--texto-font);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+img{ max-width:100%; display:block; }
+
+a{ text-decoration:none; color:inherit; }
+
+.inicio{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.gif-logo img {
+  width: 350px;
+  height: 350px;
+  float: right;
+  margin-right: 20px; 
+}
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all .25s ease;
+  white-space: nowrap;
+}
+.btn--proyecto{ background: var(--accent); color: var(--cream-light); }
+.btn--proyecto:hover{ background: var(--accent-dark); transform: translateY(-2px); }
+.btn--cv{
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid rgba(168,132,92,0.4);
+}
+.btn--cv:hover{ background: rgba(168,132,92,0.08); }
+.btn--sm{ padding: 10px 20px; font-size: 0.82rem; }
+.btn--lg{ padding: 18px 40px; font-size: 1rem; }
+.btn--icon-only{ padding: 12px; border-radius: 50%; }
+
+.btn-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top: 12px; }
+
+/* =========================================================
+   NAVBAR FLOTANTE
+   ========================================================= */
+.navbar{
+  position: fixed; top: 20px; left: 0; right: 0;
+  z-index: 100;
+  display:flex; justify-content:center;
+  padding: 0 20px;
+}
+
+.barra-nav{
+  width:100%;
+  max-width: 1080px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap: 20px;
+  background: var(--cream-light);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--cream-deep);
+  border-radius: 999px;
+  padding: 10px 12px 10px 20px;
+  box-shadow: var(--sombra-suave);
+  transition: box-shadow .3s ease;
+}
+
+.navbar.is-scrolled .barra-nav{ box-shadow: 0 12px 40px var(--accent-dark); }
+
+.nav-logo{ display:flex; align-items:center; gap:10px; flex-shrink:0; }
+.circulo-dec{
+  width:10px; height:10px; border-radius:50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  flex-shrink:0;
+  animation: pulso 1.5s infinite;
+}
+.texto-complementario{
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  line-height: 1.25;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex; align-items:center; gap: 26px;
+}
+.nav-link{
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  transition: color .2s ease;
+  position:relative;
+}
+.nav-link:hover{ color: var(--accent); }
+.nav-link.active{ color: var(--accent); font-weight:500; }
+
+.nav-actions{ display:flex; align-items:center; gap:10px; }
+
+.btn-curriculum{
+  display:inline-flex; align-items:center; gap:6px;
+  background: var(--ink);
+  color: var(--cream-light);
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background .2s ease;
+}
+.btn-resume:hover{ background:var(--ink)}
+
+.nav-toggle{
+  display:none;
+  flex-direction: column;
+  gap: 5px;
+  background:none; border:none; cursor:pointer;
+  padding: 8px;
+}
+.nav-toggle span{
+  width: 20px; height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+}
+
+@media (max-width: 880px){ /*esto lo utilizo para el redimensionamiento de pantallas pequeñas y asi sea responsive en cualquier dispositivo  */
+  .nav-links{
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    background: rgba(253,251,246,0.98);
+    border: 1px solid rgba(168,132,92,0.14);
+    border-radius: 24px;
+    padding: 14px 22px;
+    box-shadow: var(--shadow-soft);
+    display:none;
+  }
+  .nav-links.is-open{ display:flex; }
+  .nav-link{ padding: 8px 0; width:100%; }
+  .btn-curriculum span{ display:none; }
+  .nav-toggle{ display:flex; }
+}
+
+/* para la animacion de pulso de mi navbar la chibolita */
+@keyframes pulso {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
