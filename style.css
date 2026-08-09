@@ -1,5 +1,5 @@
 /* mis variables globales para mi paleta de colores y bordes :) */
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap');
 :root {
   --cream:        #F7F4EC;
   --cream-light:  #FDFBF6;
@@ -106,7 +106,7 @@ a{ text-decoration:none; color:inherit; }
   animation: pulso 1.5s infinite;
 }
 .texto-complementario{
-  font-family: var(--font-body);
+  font-family: var(--texto-font);
   font-size: 0.78rem;
   line-height: 1.25;
   color: var(--ink);
@@ -208,7 +208,7 @@ a{ text-decoration:none; color:inherit; }
 
   /* --- capa de atras para el fondo --- */
   background: rgba(253, 251, 246, 0.55);
-  border: 1px solid rgba(168, 132, 92, 0.18);
+  border: 1px solid var(--accent-soft);
   border-radius: var(--borde-grande);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -269,8 +269,7 @@ a{ text-decoration:none; color:inherit; }
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 24px;
-    display: block;
-    margin-top: 12px;
+  margin-top: 12px;
 }
 .etiqueta {
   padding: 7px 16px;
@@ -327,29 +326,61 @@ a{ text-decoration:none; color:inherit; }
 /* --- estadísticas --- */
 .fila-estadisticas {
   display: flex;
-  gap: 40px;
+  gap: 0;
   margin-top: 44px;
   padding-top: 32px;
   border-top: 1px solid rgba(168,132,92,0.15);
-  align-items: center;  
-  text-align: center;
-}
-.estadistica {
-  display: flex;
-  flex-direction: column;
-}
-.numero-estadistica {
-  font-family: var(--titulo-font);
-  font-size: 1.5rem;
-  color: var(--accent);
-}
-.etiqueta-estadistica {
-  font-family: var(--texto-font);
-  font-size: 0.75rem;
-  color: var(--ink-soft);
-  margin-top: 2px;
 }
 
+.estadistica {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  padding: 0 24px;
+  position: relative;
+}
+
+/* línea vertical divisoria entre cada estadística */
+.estadistica:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60%;
+  width: 1px;
+  background: rgba(168,132,92,0.2);
+}
+
+.icono-estadistica {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(168,132,92,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.numero-estadistica {
+  font-family: var(--titulo-font);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.etiqueta-estadistica {
+  font-family: var(--texto-font);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  line-height: 1.3;
+}
 /* --- logo / gif --- */
 .logoPrincipal{
   position: relative;
@@ -388,3 +419,135 @@ a{ text-decoration:none; color:inherit; }
     text-align: center;
   }
 }
+
+/* =========================================================
+   PROYECTOS — PANELES POR PROYECTO
+   ========================================================= */
+.projects{ padding: 100px 0; }
+
+.section-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-head{
+  max-width: 700px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.eyebrow{
+  font-family: var(--codigo-font);
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.section-title{
+  font-family: var(--titulo-font);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.section-sub{
+  font-family: var(--texto-font);
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+.project-panel{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-radius: var(--borde-grande);
+  overflow:hidden;
+  margin-bottom: 40px;
+  border: 1px solid rgba(168,132,92,0.1);
+}
+
+@media (min-width: 900px){
+  .project-panel{ grid-template-columns: 1.1fr 1fr; min-height: 460px; }
+}
+
+.panel-visual{
+  display:flex; align-items:center; justify-content:center;
+  padding: 56px 36px;
+  position:relative;
+  gap: 24px;
+  flex-wrap:wrap;
+}
+
+.panel-content{
+  background: var(--cream-light);
+  padding: 48px 44px;
+  display:flex; flex-direction:column; justify-content:center;
+}
+
+.project-index{
+  font-family: var(--codigo-font);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform:uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.project-index--dark{ color: var(--accent-soft-2); }
+
+.project-title{
+  font-family: var(--titulo-font);
+  font-weight:600;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  margin-bottom: 16px;
+}
+
+.project-desc{
+  font-family: var(--texto-font);
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height:1.7;
+  margin-bottom: 22px;
+}
+
+.tag-row{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom: 26px; }
+.tag{
+  font-family: var(--codigo-font);
+  font-size: 0.72rem;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(168,132,92,0.08);
+  border: 1px solid rgba(168,132,92,0.2);
+  color: var(--accent);
+}
+.tag--dark{
+  background: rgba(200,178,140,0.12);
+  border-color: rgba(200,178,140,0.3);
+  color: var(--accent-soft-2);
+}
+
+.btn-row{ display:flex; gap: 12px; flex-wrap: wrap; }
+
+.btn--primary{
+  background: var(--accent);
+  color: #fff;
+}
+.btn--primary:hover{ background: var(--accent-dark); }
+
+.btn--ghost{
+  background: transparent;
+  border: 1px solid rgba(168,132,92,0.3);
+  color: var(--ink);
+}
+
+/* --- fondos con difuminado */
+.project-panel--reparto .panel-visual{ background: linear-gradient(160deg, #F3D8B8, #EEC79A); }
+.project-panel--ventas .panel-visual{ background: linear-gradient(160deg, #F3D8B8, #EAD3A6); }
+.project-panel--infra .project-title,
+.project-panel--infra .project-desc{ color: #EDE6DC; }
+.project-panel--infra .project-desc{ color: #B4ABA0; }
+
+

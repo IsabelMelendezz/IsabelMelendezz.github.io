@@ -7,7 +7,7 @@
     <!-- importo mis librerias para mi fuente -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="LogoIsa Icon" href="img/LogoIsa.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 
@@ -15,7 +15,6 @@
 <body>
     <header class="navbar" id="navbar">
   <nav class="barra-nav">
-    <!-- el # lo que hace es declararlos como elementos unicos al momento de buscarlos -->
     <a href="#inicio" class="nav-logo">
       <span class="circulo-dec"></span>
       <span class="texto-complementario">Portafolio de<br>Isabel Meléndez</span>
@@ -43,82 +42,187 @@
 
     <main>
       <section id="inicio" class="presentacion">
-  <div class="contenedor-seccion grid-presentacion">
+        <div class="contenedor-seccion grid-presentacion">
 
-    <div class="texto-presentacion">
-      <span class="desc">Soy</span>
-      <h1 class="titulo"><span>Isabel</span> Meléndez</h1>
-      <span class="rol-tag">Estudiante de Ingeniería en Sistemas</span>
+          <div class="texto-presentacion">
+            <span class="desc">Soy</span>
+            <h1 class="titulo"><span>Isabel</span> Meléndez</h1>
+            <span class="rol-tag">Estudiante de Ingeniería en Sistemas</span>
 
-      <div class="fila-etiquetas">
-        <span class="etiqueta">Desarrollo Web</span>
-        <span class="etiqueta">Infraestructura y Redes</span>
-        <span class="etiqueta">Bases de Datos</span>
-      </div>
+            <div class="fila-etiquetas">
+              <span class="etiqueta">Desarrollo Web</span>
+              <span class="etiqueta">Infraestructura y Redes</span>
+              <span class="etiqueta">Bases de Datos</span>
+            </div>
 
-      <p class="descripcion-presentacion">
-        Me gusta crear soluciones digitales combinando ciberseguridad, software y desarrollo web,
-        con un enfoque en crear tecnología funcional, segura y pensada para resolver problemas reales.
-      </p>
+            <p class="descripcion-presentacion">
+              Me gusta crear soluciones digitales combinando ciberseguridad, software y desarrollo web,
+              con un enfoque en crear tecnología funcional, segura y pensada para resolver problemas reales.
+            </p>
 
-      <div class="fila-botones">
-        <a href="#proyectos" class="btn btn--proyectos">Ver proyectos ➔</a>
-        <a href="CV2026_ISABEL MELENDEZ_OF.pdf" class="btn btn--cv" download>Descargar CV ➔</a>
-      </div>
+            <div class="fila-botones">
+              <a href="#proyectos" class="btn btn--proyectos">Ver proyectos ➔</a>
+              <a href="CV2026_ISABEL MELENDEZ_OF.pdf" class="btn btn--cv" download>Descargar CV ➔</a>
+            </div>
 
-      <div class="fila-estadisticas">
-        <div class="estadistica">
-          <span class="numero-estadistica">3</span>
-          <span class="etiqueta-estadistica">Proyectos destacados</span>
+            <div class="fila-estadisticas">
+              <div class="estadistica">
+                <div class="icono-estadistica">🚀</div>
+                <span class="numero-estadistica">3</span>
+                <span class="etiqueta-estadistica">Proyectos<br>destacados</span>
+              </div>
+
+              <div class="estadistica">
+                <div class="icono-estadistica">🏅</div>
+                <span class="numero-estadistica">1</span>
+                <span class="etiqueta-estadistica">Certificación<br>activa</span>
+              </div>
+
+              <div class="estadistica">
+                <div class="icono-estadistica">🎓</div>
+                <span class="numero-estadistica">8</span>
+                <span class="etiqueta-estadistica">Semestre<br>UMG</span>
+              </div>
+            </div>
+          </div><!-- cierra texto-presentacion -->
+
+          <div class="logoPrincipal">
+            <img src="recursos/Isa.png" alt="Isabel Meléndez" class="gif-logo">
+          </div>
+
+        </div><!-- cierra contenedor-seccion grid-presentacion -->
+      </section>
+
+      <!-- ============ PROYECTOS ============ -->
+      <section id="proyectos" class="projects">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <span class="eyebrow">Te presento mis </span>
+            <h2 class="section-title">Proyectos destacados</h2>
+            <p class="section-sub">Aquí puedes ver con qué tecnologías y herramientas construí cada proyecto, tal como fue hecho. 💻✨.</p>
+          </div>
+
+          <!-- ---- Proyecto 01 Reparto---- -->
+          <article class="project-panel project-panel--reparto reveal">
+            <div class="panel-visual">
+              <div class="device device--laptop">
+                <div class="device-screen">
+                  <img src="img/proy1.png" alt="Logo de CC" class="screen-img" />
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-content">
+              <span class="project-index">Proyecto 01</span>
+              <h3 class="project-title">Sistema de Reparto</h3>
+              <p class="project-desc">
+                Sistema de gestión logística desarrollado en C# con SQL Server para la administración
+                de pedidos, usuarios y asignación de rutas de una empresa de reparto. Incluye control
+                de roles y permisos, operaciones CRUD, asignación transaccional de rutas, y sincronización
+                de datos entre máquinas virtuales mediante replicación de base de datos para garantizar
+                alta disponibilidad.
+              </p>
+              <div class="tag-row">
+                <span class="tag">C#</span><span class="tag">SQL Server</span>
+                <span class="tag">Entity Framework</span><span class="tag">Git</span>
+              </div>
+              <div class="btn-row">
+                <a href="https://github.com/IsabelMelendezz/Sistema_Gestion_2K26.git" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
+                  <!-- el vector de logo de github -->
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.3 11.3 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .3z"/></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ---- Proyecto 02 Sistema de Ventasr ---- -->
+          <article class="project-panel project-panel--reparto reveal">
+            <div class="panel-visual">
+              <div class="device device--laptop">
+                <div class="device-screen">
+                  <img src="img/proy2.png" alt="Logo de CC" class="screen-img" />
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-content">
+              <span class="project-index">Proyecto 02</span>
+              <h3 class="project-title">Supermercado — Ventas y Cuentas por Cobrar</h3>
+              <p class="project-desc">
+                Sistema de gestión de ventas y cuentas por cobrar desarrollado en Java con NetBeans,
+                diseñado para administrar el ciclo completo de cotizaciones, ventas, validación de pagos,
+                actualización de inventario y emisión de facturas. Incorpora operaciones CRUD, procesos
+                transaccionales, generación de reportes con JasperReports, bitácora de acciones y
+                validaciones de negocio, con integración a base de datos mediante JDBC bajo una
+                arquitectura por capas.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Java</span><span class="tag">NetBeans</span>
+                <span class="tag">JDBC</span><span class="tag">JasperReports</span><span class="tag">MySQL</span>
+              </div>
+              <div class="btn-row">
+                <a href="https://github.com/IsabelMelendezz/proyectop32k25.git" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.3 11.3 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .3z"/></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ---- Proyecto 03 Infraestructura Virtualizada  ---- -->
+          <article class="project-panel project-panel--reparto reveal">
+            <div class="panel-visual">
+              <div class="device device--laptop">
+                <div class="device-screen">
+                  <img src="img/proy3.png" alt="Logo de CC" class="screen-img" />
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-content">
+              <span class="project-index project-index--dark">Proyecto 03</span>
+              <h3 class="project-title">Infraestructura Virtualizada y Ciberseguridad Empresarial</h3>
+              <p class="project-desc">
+                Arquitectura de red segmentada con DMZ, red interna y servidor bastión con firewall
+                iptables, virtualizada sobre VirtualBox con Ubuntu Server. Incluye análisis de riesgos
+                con metodología MAGERIT sobre más de 50 activos, alineado a controles ISO/IEC 27001:2013,
+                replicación Master-Master en MySQL, proxy inverso Nginx, proxy Squid y VPN para acceso
+                remoto seguro.
+              </p>
+              <div class="tag-row">
+                <span class="tag tag--dark">Ubuntu Server</span><span class="tag tag--dark">VirtualBox</span>
+                <span class="tag tag--dark">iptables</span><span class="tag tag--dark">Nginx</span>
+                <span class="tag tag--dark">OpenVPN</span><span class="tag tag--dark">ISO 27001</span>
+              </div>
+              <div class="btn-row">
+                <a href="https://github.com/IsabelMelendezz/Nube_Privada_2K26.git" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.3 11.3 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .3z"/></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
-        <div class="estadistica">
-          <span class="numero-estadistica">1</span>
-          <span class="etiqueta-estadistica">Certificación activa</span>
-        </div>
-        <div class="estadistica">
-          <span class="numero-estadistica">8vo</span>
-          <span class="etiqueta-estadistica">Semestre UMG</span>
-        </div>
-      </div>
-    </div><!-- cierra texto-presentacion -->
+      </section>
 
-    <div class="logoPrincipal">
-      <img src="recursos/Isa.png" alt="Isabel Meléndez" class="gif-logo">
-    </div>
+      <section id="tecnologias" class="habilidades">
+        <h2>Tecnologías dominadas</h2>
+      </section>
 
-  </div><!-- cierra contenedor-seccion grid-presentacion -->
-</section>
+      <section id="certificaciones" class="certificaciones">
+        <h2>Sobre mí</h2>
+      </section>
+
+      <section id="contacto" class="contacto">
+        <h2>Contáctame</h2>
+      </section>
+
+      <section id="sobre-mi" class="sobre-mi">
+        <h2>Sobre mí</h2>
+      </section>
+
     </main>
 
-
-
-  <section id="proyectos" class="proyectos">
-    <h2>Mis proyectos</h2>
-  </section>
-
-  <section id="tecnologias" class="habilidades">
-    <h2>Tecnologías dominadas</h2>
-  </section>
-
-  <section id="certificaciones" class="certificaciones">
-    <h2>Sobre mí</h2>
-  </section>
-
-  <section id="contacto" class="contacto">
-    <h2>Contáctame</h2>
-  </section>
-
-
-  <section id="sobre-mi" class="sobre-mi">
-    <h2>Sobre mí</h2>
-  </section>
-
-
-</main>
-
-
-</body>
-   
-    
 </body>
 </html>
