@@ -9,7 +9,8 @@
   --accent:       #A8845C;
   --accent-dark:  #8E6E4B;
   --accent-soft:  #D8C6A5;
-  --accent-soft-2:#C8B28C; 
+  --accent-soft-2:#d4bc91; 
+  --accent-soft-3:#e2daca; 
   --titulo-font: 'Playfair Display', serif;   
   --texto-font:  'Inter', sans-serif;        
   --codigo-font: 'DM Mono', monospace; 
@@ -46,8 +47,16 @@ a{ text-decoration:none; color:inherit; }
   padding: 0 24px;
 }
 
+#inicio {
+  background: var(--cream-soft);
+}
+#proyectos {
+  background: linear-gradient(3500deg, var(--accent-soft-3), var(--cream-light));
+}
+
+
 /* =========================================================
-   BOTONES
+                         BOTONES
    ========================================================= */
 .btn{
   display:inline-flex; align-items:center; gap:8px;
@@ -73,7 +82,7 @@ a{ text-decoration:none; color:inherit; }
 .btn--icon-only{ padding: 12px; border-radius: 50%; }
 
 /* =========================================================
-   NAVBAR FLOTANTE
+                      NAVBAR FLOTANTE
    ========================================================= */
 .navbar{
   position: fixed; top: 20px; left: 0; right: 0;
@@ -123,7 +132,7 @@ a{ text-decoration:none; color:inherit; }
   transition: color .2s ease;
   position:relative;
 }
-.nav-link:hover{ color: var(--accent); }
+.nav-link:hover{ color: var(--accent);}
 .nav-link.active{ color: var(--accent); font-weight:500; }
 
 .nav-acciones{ display:flex; align-items:center; gap:10px; }
@@ -139,6 +148,8 @@ a{ text-decoration:none; color:inherit; }
   transition: background .2s ease;
 }
 .btn-curriculum:hover{ background:var(--accent-dark); }
+
+/* mi menu de hamburguesita si es en pantallas pequeñas */
 
 .nav-toggle{
   display:none;
@@ -182,7 +193,7 @@ a{ text-decoration:none; color:inherit; }
 }
 
 /* =========================================================
-   PRESENTACIÓN (Inicio)
+                PRESENTACIÓN (o mi Inicio)
    ========================================================= */
 .presentacion {
   position: relative;
@@ -205,10 +216,11 @@ a{ text-decoration:none; color:inherit; }
   margin: 0 auto;
   padding-left: 24px;
   padding-right: 24px;
+ 
 
   /* --- capa de atras para el fondo --- */
   background: rgba(253, 251, 246, 0.55);
-  border: 1px solid var(--accent-soft);
+  border: 1px solid var(--cream-light);
   border-radius: var(--borde-grande);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -263,7 +275,7 @@ a{ text-decoration:none; color:inherit; }
     margin-top: 12px;
 }
 
-/* --- habilidades (etiquetas tipo pastilla) --- */
+/* ---mis tags principales de habilidad --- */
 .fila-etiquetas {
   display: flex;
   flex-wrap: wrap;
@@ -329,7 +341,7 @@ a{ text-decoration:none; color:inherit; }
   gap: 0;
   margin-top: 44px;
   padding-top: 32px;
-  border-top: 1px solid rgba(168,132,92,0.15);
+  border-top: 1px solid rgba(168,132,92,0.15); /*para mi linea que divide las celdas*/
 }
 
 .estadistica {
@@ -397,7 +409,7 @@ a{ text-decoration:none; color:inherit; }
 /* esto es para el manejo responsive asi mi foto se ve primero al cargarlo en tablet o celular */
 @media (max-width: 959px) {
   .logoPrincipal {
-    order: -1; /* la foto sube arriba del texto en móvil/tablet */
+    order: -1; /* muevo la foto para arriba del contenido*/
     margin-bottom: 20px;
   }
 }
@@ -418,6 +430,17 @@ a{ text-decoration:none; color:inherit; }
     width: 100%;
     text-align: center;
   }
+}
+
+.separador {
+  height: 80px;
+  background: var(--accent-soft);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  transition: clip-path .4s ease, background .4s ease;
+}
+
+.separador:hover {
+  clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
 /* =========================================================
@@ -515,12 +538,12 @@ a{ text-decoration:none; color:inherit; }
 
 .tag-row{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom: 26px; }
 .tag{
-  font-family: var(--codigo-font);
+  font-family: Manrope;
   font-size: 0.72rem;
   padding: 5px 12px;
   border-radius: 999px;
   background: rgba(168,132,92,0.08);
-  border: 1px solid rgba(168,132,92,0.2);
+  border: 0;
   color: var(--accent);
 }
 .tag--dark{
@@ -549,5 +572,3 @@ a{ text-decoration:none; color:inherit; }
 .project-panel--infra .project-title,
 .project-panel--infra .project-desc{ color: #EDE6DC; }
 .project-panel--infra .project-desc{ color: #B4ABA0; }
-
-
